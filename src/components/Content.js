@@ -14,18 +14,18 @@ const Content = ({ cases }) => {
     var year = date.getFullYear();
 
     var monthDict = {
-        1 : "Jan",
-        2 : "Feb",
-        3 : "Mar",
-        4 : "Apr",
-        5 : "Mei",
-        6 : "Jun",
-        7 : "Jul",
-        8 : "Agu",
-        9 : "Sep",
-        10 : "Okt",
-        11 : "Nov",
-        12 : "Des"
+        0 : "Jan",
+        1 : "Feb",
+        2 : "Mar",
+        3 : "Apr",
+        4 : "Mei",
+        5 : "Jun",
+        6 : "Jul",
+        7 : "Agu",
+        8 : "Sep",
+        9 : "Okt",
+        10 : "Nov",
+        11 : "Des"
     }
 
     month = monthDict[month];
