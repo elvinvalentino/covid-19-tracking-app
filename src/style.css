@@ -161,7 +161,11 @@ body{
 
 .article .article-content p,
 .article .article-content ul li{
-    letter-spacing: .5px;
+    letter-spacing: 1px;
+}
+
+.article .article-content ul li{
+    margin-bottom: 4px;
 }
 
 .footer{
