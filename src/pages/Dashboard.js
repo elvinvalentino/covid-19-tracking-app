@@ -37,7 +37,6 @@ class Dashboard extends Component {
     }
 
     render() {
-
         return (
             <div>
                 <Container>
@@ -48,7 +47,6 @@ class Dashboard extends Component {
                 <Footer />
             </div>
         )
-
     }
 }
 
