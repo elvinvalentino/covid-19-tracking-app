@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
 import Container from '../components/Container';
 import Header from '../components/Header';
@@ -6,11 +6,14 @@ import Content from '../components/Content';
 import Article from '../components/Article';
 import Footer from '../components/Footer'
 
-const Dashboard = () => {
+class Dashboard extends Component {
 
-    const [cases, setCases] = useState();
+    state = {
+        cases: undefined
+    }
 
-    fetch("https://covid-193.p.rapidapi.com/statistics?country=Indonesia", {
+    componentDidMount = async () => {
+        await fetch("https://covid-193.p.rapidapi.com/statistics?country=Indonesia", {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "covid-193.p.rapidapi.com",
@@ -20,22 +23,33 @@ const Dashboard = () => {
     .then(async response => {
         let res = await response.json();
         let datas = await res.response;
-        await setCases(...datas)
+        datas.forEach(data => {
+            this.setState({
+                cases: data
+            }, () => {
+                this.componentDidMount();
+            });
+        });
     })
     .catch(err => {
         console.log(err);
     });
+    }
 
-    return (
-        <div>
-            <Container>
-                <Header />
-                <Content cases={cases} />
-                <Article />
-            </Container>
-            <Footer />
-        </div>
-    )
+    render() {
+
+        return (
+            <div>
+                <Container>
+                    <Header />
+                    <Content cases={this.state.cases} update={this.componentDidMount} />
+                    <Article />
+                </Container>
+                <Footer />
+            </div>
+        )
+
+    }
 }
 
 export default Dashboard;
