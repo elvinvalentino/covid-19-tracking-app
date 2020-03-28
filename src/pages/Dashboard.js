@@ -19,7 +19,7 @@ const Dashboard = () => {
     })
     .then(async response => {
         let res = await response.json();
-        let datas = res.response;
+        let datas = await res.response;
         await setCases(...datas)
     })
     .catch(err => {
