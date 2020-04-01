@@ -8,8 +8,12 @@ const Content = ({ cases, update }) => {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
+    const checkDay = (day) => {
+        return day < 10 ? "0" + day : day;
+    }
+
     var date = cases === undefined ? new Date() : new Date(cases.day);
-    var day = date.getDate();
+    var day = checkDay(date.getDate());
     var month = date.getMonth();
     var year = date.getFullYear();
 
