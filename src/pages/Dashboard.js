@@ -41,7 +41,7 @@ class Dashboard extends Component {
             <div>
                 <Container>
                     <Header />
-                    <Content cases={this.state.cases} update={this.componentDidMount} />
+                    <Content cases={this.state.cases}/>
                     <Article />
                 </Container>
                 <Footer />

@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarWeek, faVirus, faPlus, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons'
 
-const Content = ({ cases, update }) => {
+const Content = ({ cases }) => {
 
     const formatNumber = (num) => {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
