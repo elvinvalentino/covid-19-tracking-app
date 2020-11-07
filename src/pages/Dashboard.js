@@ -27,7 +27,9 @@ class Dashboard extends Component {
             this.setState({
                 cases: data
             }, () => {
-                this.componentDidMount();
+                setTimeOut(() => {
+                    this.componentDidMount();
+                }, 300000);
             });
         });
     })
